@@ -1,0 +1,758 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Chinese Cards 汉语</title><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="汉语"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#0f6b5c">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#eef3f1;--fg:#14201d;--card:#fff;--mut:#5f736e;--ac:#0f6b5c;--acf:#fff;--bd:#d3dfdb;--t1:#d6336c;--t2:#2b8a3e;--t3:#1971c2;--t4:#7048e8;--t5:#7d8a86}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1512;--fg:#e6f0ed;--card:#16221e;--mut:#8ea59f;--ac:#3ecbb0;--acf:#06201a;--bd:#263631;--t1:#ff6b9d;--t2:#69db7c;--t3:#74c0fc;--t4:#b197fc;--t5:#9aaaa5}}
+:root[data-theme="dark"]{--bg:#0d1512;--fg:#e6f0ed;--card:#16221e;--mut:#8ea59f;--ac:#3ecbb0;--acf:#06201a;--bd:#263631;--t1:#ff6b9d;--t2:#69db7c;--t3:#74c0fc;--t4:#b197fc;--t5:#9aaaa5}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.4 system-ui,-apple-system,"PingFang SC","Noto Sans SC",sans-serif}
+main{max-width:520px;margin:0 auto;padding:16px}
+h1{font-size:22px;margin:0}h1 small{font-weight:400;color:var(--mut);font-size:14px}h3{margin:22px 0 8px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+nav{display:flex;gap:4px;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:3px}
+nav button{border:0;background:none;color:var(--mut);padding:6px 12px;border-radius:8px;font:inherit;cursor:pointer}
+nav button.on{background:var(--ac);color:var(--acf)}
+button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.deck{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:10px}
+.deck div{flex:1}.deck span{display:block;color:var(--mut);font-size:14px}.deck small{display:block;margin-top:4px;color:var(--mut)}
+.bar{height:4px;background:var(--bd);border-radius:2px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac)}
+.deck>button,.pri{background:var(--ac);color:var(--acf);border:0;border-radius:10px;padding:10px 16px;font-weight:600}
+.pri{width:100%;padding:14px;margin-top:12px}
+.top{display:flex;justify-content:space-between;align-items:center;color:var(--mut);margin-bottom:10px}
+.ghost{background:none;border:0;color:var(--ac);padding:6px 0}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:28px 16px;text-align:center;min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.hz{font:400 64px/1.15 "Songti SC","Noto Serif SC","Source Han Serif SC",serif;word-break:keep-all}
+.py{font-size:28px;font-weight:600}.en{font-size:19px;color:var(--mut)}
+.spk{margin-top:10px;background:none;border:1px solid var(--bd);color:var(--fg);border-radius:20px;padding:6px 14px}
+.rt{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.rt button{border:1px solid var(--bd);background:var(--card);color:var(--fg);border-radius:10px;padding:14px 0;font-weight:600}
+.t1{color:var(--t1)}.t2{color:var(--t2)}.t3{color:var(--t3)}.t4{color:var(--t4)}.t5{color:var(--t5)}
+.mut,.tone small,.chip small{color:var(--mut)}
+.tone{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px 14px;margin-bottom:8px;cursor:pointer}
+.tone svg{width:56px;height:42px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.tone>div:nth-child(2){flex:1}.tone small{display:block}.tone .r{text-align:right;font-size:20px}
+#vs select{width:100%;padding:10px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--fg);font:inherit;margin-bottom:10px}#vs label{display:block}#vs input{width:60%;vertical-align:middle}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chip{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px;text-align:center;cursor:pointer;font-size:20px}.chip small{display:block;font-size:13px}
+#t textarea{width:100%;box-sizing:border-box;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--fg);padding:8px;font:13px monospace}.ex{margin-top:14px;padding-top:14px;border-top:1px solid var(--bd);width:100%}.exz{font:400 26px/1.4 "Songti SC","Noto Serif SC",serif}.exp{font-size:17px;font-weight:600;margin:4px 0}.hl{color:var(--ac)}.ex .spk{margin-top:8px}</style></head><body><main>
+<header><h1>汉语 <small>Chinese Cards</small></h1><nav id="nav"><button class="on" data-v="d">Decks</button><button data-v="t">Audio</button></nav></header>
+<section id="d"></section><section id="s" hidden></section><section id="t" hidden></section>
+</main>
+<script>
+const D=[
+['Starter','Greetings, numbers, first words',`你好|ni3 hao3|hello
+谢谢|xie4 xie5|thank you
+不客气|bu2 ke4 qi5|you're welcome
+再见|zai4 jian4|goodbye
+对不起|dui4 bu5 qi3|sorry
+没关系|mei2 guan1 xi5|it's okay
+请|qing3|please
+是|shi4|to be, yes
+不|bu4|no, not
+我|wo3|I, me
+你|ni3|you
+他|ta1|he
+她|ta1|she
+我们|wo3 men5|we
+好|hao3|good
+一|yi1|one
+二|er4|two
+三|san1|three
+四|si4|four
+五|wu3|five
+六|liu4|six
+七|qi1|seven
+八|ba1|eight
+九|jiu3|nine
+十|shi2|ten
+零|ling2|zero
+早上好|zao3 shang5 hao3|good morning
+晚安|wan3 an1|good night
+叫|jiao4|to be called
+名字|ming2 zi5|name
+人|ren2|person
+中国|zhong1 guo2|China
+吗|ma5|question particle
+什么|shen2 me5|what
+谁|shui2|who
+哪里|na3 li5|where
+爱|ai4|love
+水|shui3|water
+妈妈|ma1 ma5|mom
+爸爸|ba4 ba5|dad
+红|hong2|red
+白|bai2|white
+黑|hei1|black
+蓝|lan2|blue
+绿|lv4|green
+黄|huang2|yellow
+哥哥|ge1 ge5|older brother
+姐姐|jie3 jie5|older sister
+弟弟|di4 di5|younger brother
+妹妹|mei4 mei5|younger sister
+儿子|er2 zi5|son
+女儿|nv3 er2|daughter
+手|shou3|hand
+头|tou2|head
+眼睛|yan3 jing5|eyes
+书|shu1|book
+钱|qian2|money
+太阳|tai4 yang5|sun
+月亮|yue4 liang5|moon
+男人|nan2 ren2|man
+女人|nv3 ren2|woman
+孩子|hai2 zi5|child
+对|dui4|correct
+不对|bu2 dui4|incorrect
+好吃|hao3 chi1|delicious`],
+['Beginner','Food, family, daily life',`吃|chi1|to eat
+喝|he1|to drink
+饭|fan4|meal, rice
+茶|cha2|tea
+咖啡|ka1 fei1|coffee
+苹果|ping2 guo3|apple
+面包|mian4 bao1|bread
+想|xiang3|to want, think
+要|yao4|to want
+有|you3|to have
+没有|mei2 you3|don't have
+这|zhe4|this
+那|na4|that
+多少钱|duo1 shao5 qian2|how much?
+大|da4|big
+小|xiao3|small
+多|duo1|many
+少|shao3|few
+今天|jin1 tian1|today
+明天|ming2 tian1|tomorrow
+昨天|zuo2 tian1|yesterday
+现在|xian4 zai4|now
+家|jia1|home, family
+学校|xue2 xiao4|school
+朋友|peng2 you5|friend
+老师|lao3 shi1|teacher
+学生|xue2 sheng5|student
+学习|xue2 xi2|to study
+中文|zhong1 wen2|Chinese language
+说|shuo1|to speak
+看|kan4|to look, watch
+听|ting1|to listen
+去|qu4|to go
+来|lai2|to come
+在|zai4|to be at
+喜欢|xi3 huan5|to like
+很|hen3|very
+太|tai4|too
+狗|gou3|dog
+猫|mao1|cat
+米饭|mi3 fan4|cooked rice
+面条|mian4 tiao2|noodles
+鸡肉|ji1 rou4|chicken
+牛肉|niu2 rou4|beef
+猪肉|zhu1 rou4|pork
+鱼|yu2|fish
+蛋|dan4|egg
+牛奶|niu2 nai3|milk
+啤酒|pi2 jiu3|beer
+菜|cai4|dish, vegetable
+水果|shui3 guo3|fruit
+饿|e4|hungry
+渴|ke3|thirsty
+睡觉|shui4 jiao4|to sleep
+起床|qi3 chuang2|to get up
+洗澡|xi3 zao3|to bathe
+走|zou3|to walk
+跑|pao3|to run
+坐|zuo4|to sit
+站|zhan4|to stand
+开|kai1|to open, drive
+关|guan1|to close
+给|gei3|to give
+拿|na2|to take
+做|zuo4|to do, make
+写|xie3|to write
+读|du2|to read aloud
+知道|zhi1 dao4|to know
+认识|ren4 shi5|to know (a person)
+会|hui4|can, will
+能|neng2|can, be able
+可以|ke3 yi3|may, can
+早|zao3|early
+晚|wan3|late
+高兴|gao1 xing4|happy
+累|lei4|tired
+忙|mang2|busy
+新|xin1|new
+旧|jiu4|old (things)
+长|chang2|long
+短|duan3|short
+快|kuai4|fast
+慢|man4|slow
+上|shang4|up, on
+下|xia4|down, under
+里|li3|inside
+前|qian2|front, before
+后|hou4|behind, after
+左|zuo3|left
+右|you4|right`],
+['Elementary','Time, places, shopping, travel',`因为|yin1 wei4|because
+所以|suo3 yi3|therefore
+但是|dan4 shi4|but
+如果|ru2 guo3|if
+或者|huo4 zhe3|or
+已经|yi3 jing1|already
+还|hai2|still
+也|ye3|also
+都|dou1|all
+一起|yi4 qi3|together
+时间|shi2 jian1|time
+点|dian3|o'clock
+分钟|fen1 zhong1|minute
+星期|xing1 qi1|week
+月|yue4|month
+年|nian2|year
+天气|tian1 qi4|weather
+下雨|xia4 yu3|to rain
+热|re4|hot
+冷|leng3|cold
+工作|gong1 zuo4|work
+公司|gong1 si1|company
+医院|yi1 yuan4|hospital
+银行|yin2 hang2|bank
+机场|ji1 chang3|airport
+火车|huo3 che1|train
+出租车|chu1 zu1 che1|taxi
+旅游|lv3 you2|to travel
+手机|shou3 ji1|phone
+电脑|dian4 nao3|computer
+买|mai3|to buy
+卖|mai4|to sell
+贵|gui4|expensive
+便宜|pian2 yi5|cheap
+漂亮|piao4 liang5|pretty
+超市|chao1 shi4|supermarket
+饭馆|fan4 guan3|restaurant
+商店|shang1 dian4|store
+酒店|jiu3 dian4|hotel
+地铁|di4 tie3|subway
+公共汽车|gong1 gong4 qi4 che1|bus
+飞机|fei1 ji1|airplane
+自行车|zi4 xing2 che1|bicycle
+护照|hu4 zhao4|passport
+地图|di4 tu2|map
+路|lu4|road
+附近|fu4 jin4|nearby
+远|yuan3|far
+近|jin4|near
+左边|zuo3 bian5|left side
+右边|you4 bian5|right side
+拐|guai3|to turn
+一直|yi4 zhi2|straight, always
+问|wen4|to ask
+回答|hui2 da2|to answer
+告诉|gao4 su5|to tell
+帮助|bang1 zhu4|to help
+借|jie4|to borrow
+打电话|da3 dian4 hua4|to make a call
+发短信|fa1 duan3 xin4|to send a text
+上网|shang4 wang3|to go online
+音乐|yin1 yue4|music
+电影|dian4 ying3|movie
+唱歌|chang4 ge1|to sing
+跳舞|tiao4 wu3|to dance
+运动|yun4 dong4|sports, exercise
+足球|zu2 qiu2|soccer
+游泳|you2 yong3|to swim
+生日|sheng1 ri4|birthday
+礼物|li3 wu4|gift
+春天|chun1 tian1|spring
+夏天|xia4 tian1|summer
+秋天|qiu1 tian1|autumn
+冬天|dong1 tian1|winter
+雪|xue3|snow
+风|feng1|wind
+感冒|gan3 mao4|to catch a cold
+头疼|tou2 teng2|headache
+药|yao4|medicine`],
+['Intermediate','Ideas, opinions, everyday abstractions',`经验|jing1 yan4|experience
+决定|jue2 ding4|to decide
+习惯|xi2 guan4|habit
+关系|guan1 xi5|relationship
+环境|huan2 jing4|environment
+影响|ying3 xiang3|influence
+了解|liao3 jie3|to understand
+应该|ying1 gai1|should
+可能|ke3 neng2|maybe
+必须|bi4 xu1|must
+重要|zhong4 yao4|important
+容易|rong2 yi4|easy
+困难|kun4 nan5|difficult
+意思|yi4 si5|meaning
+问题|wen4 ti2|problem, question
+办法|ban4 fa3|method
+机会|ji1 hui4|opportunity
+经济|jing1 ji4|economy
+文化|wen2 hua4|culture
+历史|li4 shi3|history
+健康|jian4 kang1|health
+锻炼|duan4 lian4|to exercise
+参加|can1 jia1|to participate
+介绍|jie4 shao4|to introduce
+同意|tong2 yi4|to agree
+发现|fa1 xian4|to discover
+提高|ti2 gao1|to improve
+成功|cheng2 gong1|success
+比较|bi3 jiao4|comparatively
+终于|zhong1 yu2|finally
+计划|ji4 hua4|plan
+目标|mu4 biao1|goal
+结果|jie2 guo3|result
+原因|yuan2 yin1|reason
+方法|fang1 fa3|method
+条件|tiao2 jian4|condition
+情况|qing2 kuang4|situation
+态度|tai4 du4|attitude
+印象|yin4 xiang4|impression
+感觉|gan3 jue2|feeling
+担心|dan1 xin1|to worry
+害怕|hai4 pa4|afraid
+放心|fang4 xin1|to relax, rest assured
+满意|man3 yi4|satisfied
+遇到|yu4 dao4|to encounter
+选择|xuan3 ze2|to choose
+改变|gai3 bian4|to change
+准备|zhun3 bei4|to prepare
+安排|an1 pai2|to arrange
+注意|zhu4 yi4|to pay attention
+表示|biao3 shi4|to indicate
+需要|xu1 yao4|to need
+适合|shi4 he2|to suit
+相信|xiang1 xin4|to believe
+支持|zhi1 chi2|to support
+邀请|yao1 qing3|to invite
+接受|jie1 shou4|to accept
+拒绝|ju4 jue2|to refuse
+讨论|tao3 lun4|to discuss
+解决|jie3 jue2|to solve
+经常|jing1 chang2|often
+突然|tu1 ran2|suddenly
+特别|te4 bie2|especially
+一定|yi2 ding4|certainly
+差不多|cha4 bu5 duo1|almost`],
+['Advanced','Society, idioms, formal language',`一举两得|yi4 ju3 liang3 de2|kill two birds with one stone
+马马虎虎|ma3 ma5 hu1 hu1|so-so, careless
+入乡随俗|ru4 xiang1 sui2 su2|when in Rome...
+加油|jia1 you2|come on! (add oil)
+虽然|sui1 ran2|although
+即使|ji2 shi3|even if
+不仅|bu4 jin3|not only
+甚至|shen4 zhi4|even, to the point of
+尽管|jin3 guan3|despite
+根据|gen1 ju4|according to
+观点|guan1 dian3|viewpoint
+政府|zheng4 fu3|government
+社会|she4 hui4|society
+责任|ze2 ren4|responsibility
+竞争|jing4 zheng1|competition
+创新|chuang4 xin1|innovation
+发展|fa1 zhan3|development
+资源|zi1 yuan2|resources
+保护|bao3 hu4|to protect
+符合|fu2 he2|to conform to
+意识|yi4 shi2|awareness
+体验|ti3 yan4|to experience
+表达|biao3 da2|to express
+分析|fen1 xi1|to analyze
+理解|li3 jie3|to comprehend
+挑战|tiao3 zhan4|challenge
+趋势|qu1 shi4|trend
+局面|ju2 mian4|situation
+现象|xian4 xiang4|phenomenon
+措施|cuo4 shi1|measure
+政策|zheng4 ce4|policy
+制度|zhi4 du4|system
+传统|chuan2 tong3|tradition
+价值|jia4 zhi2|value
+效果|xiao4 guo3|effect
+提供|ti2 gong1|to provide
+促进|cu4 jin4|to promote
+避免|bi4 mian3|to avoid
+承担|cheng2 dan1|to bear
+实现|shi2 xian4|to realize
+强调|qiang2 diao4|to emphasize
+考虑|kao3 lv4|to consider
+反映|fan3 ying4|to reflect
+逐渐|zhu2 jian4|gradually
+从而|cong2 er2|thereby
+否则|fou3 ze2|otherwise
+毕竟|bi4 jing4|after all
+未必|wei4 bi4|not necessarily
+何况|he2 kuang4|let alone
+对牛弹琴|dui4 niu2 tan2 qin2|cast pearls before swine
+画蛇添足|hua4 she2 tian1 zu2|ruin by adding extras
+守株待兔|shou3 zhu1 dai4 tu4|wait for luck
+半途而废|ban4 tu2 er2 fei4|give up halfway
+好事多磨|hao3 shi4 duo1 mo2|good things take time
+三思而行|san1 si1 er2 xing2|think before acting`],
+['Phrases','Everyday sentences to memorise',`你好吗？|ni3 hao3 ma5|how are you?
+我很好，谢谢。|wo3 hen3 hao3 xie4 xie5|I'm fine, thanks.
+你叫什么名字？|ni3 jiao4 shen2 me5 ming2 zi5|what's your name?
+我叫小明。|wo3 jiao4 xiao3 ming2|my name is Xiaoming.
+很高兴认识你。|hen3 gao1 xing4 ren4 shi5 ni3|nice to meet you.
+你是哪国人？|ni3 shi4 na3 guo2 ren2|where are you from?
+我是美国人。|wo3 shi4 mei3 guo2 ren2|I'm American.
+你会说英语吗？|ni3 hui4 shuo1 ying1 yu3 ma5|do you speak English?
+我不会说中文。|wo3 bu2 hui4 shuo1 zhong1 wen2|I can't speak Chinese.
+我听不懂。|wo3 ting1 bu4 dong3|I don't understand.
+请再说一遍。|qing3 zai4 shuo1 yi2 bian4|please say it again.
+请说慢一点。|qing3 shuo1 man4 yi4 dian3|please speak slower.
+这是什么？|zhe4 shi4 shen2 me5|what is this?
+太贵了。|tai4 gui4 le5|too expensive.
+便宜一点吧。|pian2 yi5 yi4 dian3 ba5|make it a bit cheaper.
+我要这个。|wo3 yao4 zhe4 ge5|I want this one.
+我想喝水。|wo3 xiang3 he1 shui3|I want to drink water.
+我饿了。|wo3 e4 le5|I'm hungry.
+真好吃！|zhen1 hao3 chi1|so delicious!
+买单。|mai3 dan1|the bill, please.
+洗手间在哪里？|xi3 shou3 jian1 zai4 na3 li5|where's the restroom?
+我迷路了。|wo3 mi2 lu4 le5|I'm lost.
+去机场怎么走？|qu4 ji1 chang3 zen3 me5 zou3|how do I get to the airport?
+现在几点？|xian4 zai4 ji3 dian3|what time is it?
+今天星期几？|jin1 tian1 xing1 qi1 ji3|what day is today?
+我明天有空。|wo3 ming2 tian1 you3 kong4|I'm free tomorrow.
+我们一起去吧。|wo3 men5 yi4 qi3 qu4 ba5|let's go together.
+没问题。|mei2 wen4 ti2|no problem.
+我不知道。|wo3 bu4 zhi1 dao4|I don't know.
+我明白了。|wo3 ming2 bai5 le5|I understand.
+等一下。|deng3 yi2 xia4|wait a moment.
+慢慢来。|man4 man4 lai2|take your time.
+祝你生日快乐！|zhu4 ni3 sheng1 ri4 kuai4 le4|happy birthday!
+新年快乐！|xin1 nian2 kuai4 le4|happy New Year!
+恭喜发财！|gong1 xi3 fa1 cai2|wishing you prosperity!
+祝你好运！|zhu4 ni3 hao3 yun4|good luck!
+我爱你。|wo3 ai4 ni3|I love you.
+我想你了。|wo3 xiang3 ni3 le5|I miss you.
+你在做什么？|ni3 zai4 zuo4 shen2 me5|what are you doing?
+我在学中文。|wo3 zai4 xue2 zhong1 wen2|I'm learning Chinese.
+你住在哪里？|ni3 zhu4 zai4 na3 li5|where do you live?
+我住在北京。|wo3 zhu4 zai4 bei3 jing1|I live in Beijing.
+我很喜欢中国菜。|wo3 hen3 xi3 huan5 zhong1 guo2 cai4|I really like Chinese food.
+今天天气很好。|jin1 tian1 tian1 qi4 hen3 hao3|the weather is nice today.
+我头疼。|wo3 tou2 teng2|I have a headache.
+请帮帮我。|qing3 bang1 bang1 wo3|please help me.
+慢走。|man4 zou3|take care (to someone leaving).
+我们去吃饭吧。||Let's go eat.
+你想吃什么？||What do you want to eat?
+我想喝咖啡。||I'd like a coffee.
+这个多少钱？||How much is this?
+你的手机在哪里？||Where is your phone?
+你有电脑吗？||Do you have a computer?
+你几点起床？||What time do you get up?
+你喜欢什么？||What do you like?
+我喜欢听音乐。||I like listening to music.
+你会游泳吗？||Can you swim?
+我会说一点中文。||I can speak a little Chinese.
+请说中文。||Please speak Chinese.
+你能帮助我吗？||Can you help me?
+谢谢你的帮助。||Thanks for your help.
+我想去医院。||I want to go to the hospital.
+我不太高兴。||I'm not very happy.
+我很累，想睡觉。||I'm tired and want to sleep.
+你家在哪里？||Where is your home?
+这是我的朋友。||This is my friend.
+他是我的老师。||He is my teacher.
+她是我的妈妈。||She is my mom.
+我们是好朋友。||We are good friends.
+你今天忙吗？||Are you busy today?
+请问，这里有银行吗？||Excuse me, is there a bank here?
+医院在银行的左边。||The hospital is left of the bank.
+我坐地铁去公司。||I take the subway to work.
+明天会下雨吗？||Will it rain tomorrow?
+今天很冷。||It's cold today.
+我们喝茶吧。||Let's drink tea.
+你认识他吗？||Do you know him?
+这个好吃吗？||Is this tasty?
+我也是学生。||I'm a student too.
+你在学校学习吗？||Do you study at school?
+我爱我的家。||I love my home.
+很好，我们走吧。||Good, let's go.`],
+['Extra','Sweet words and compliments',`你真好看。|ni3 zhen1 hao3 kan4|You're so good-looking.
+你很漂亮。|ni3 hen3 piao4 liang5|You're beautiful.
+你今天真美。|ni3 jin1 tian1 zhen1 mei3|You look lovely today.
+你笑起来真好看。|ni3 xiao4 qi3 lai5 zhen1 hao3 kan4|Your smile is beautiful.
+你的眼睛很漂亮。|ni3 de5 yan3 jing5 hen3 piao4 liang5|Your eyes are beautiful.
+你穿这件衣服真好看。|ni3 chuan1 zhe4 jian4 yi1 fu5 zhen1 hao3 kan4|That outfit looks great on you.
+你的声音很好听。|ni3 de5 sheng1 yin1 hen3 hao3 ting1|Your voice is lovely.
+你真可爱。|ni3 zhen1 ke3 ai4|You're so cute.
+你真温柔。|ni3 zhen1 wen1 rou2|You're so gentle.
+你很聪明。|ni3 hen3 cong1 ming5|You're very smart.
+你好棒！|ni3 hao3 bang4|You're awesome!
+你真厉害！|ni3 zhen1 li4 hai5|You're amazing!
+你是最好的。|ni3 shi4 zui4 hao3 de5|You're the best.
+我喜欢你。|wo3 xi3 huan5 ni3|I like you.
+我很想你。|wo3 hen3 xiang3 ni3|I miss you a lot.
+我每天都想你。|wo3 mei3 tian1 dou1 xiang3 ni3|I think of you every day.
+我想见你。|wo3 xiang3 jian4 ni3|I want to see you.
+我想抱抱你。|wo3 xiang3 bao4 bao5 ni3|I want to hug you.
+我想牵你的手。|wo3 xiang3 qian1 ni3 de5 shou3|I want to hold your hand.
+和你在一起，我很开心。|he2 ni3 zai4 yi4 qi3 wo3 hen3 kai1 xin1|I'm happy when I'm with you.
+你让我很开心。|ni3 rang4 wo3 hen3 kai1 xin1|You make me very happy.
+遇见你，我很幸运。|yu4 jian4 ni3 wo3 hen3 xing4 yun4|I'm lucky to have met you.
+有你真好。|you3 ni3 zhen1 hao3|It's so nice to have you.
+你是我的幸福。|ni3 shi4 wo3 de5 xing4 fu2|You are my happiness.
+你是我的唯一。|ni3 shi4 wo3 de5 wei2 yi1|You are my one and only.
+你是我的全世界。|ni3 shi4 wo3 de5 quan2 shi4 jie4|You are my whole world.
+我会一直陪着你。|wo3 hui4 yi4 zhi2 pei2 zhe5 ni3|I'll always be by your side.
+我会好好对你。|wo3 hui4 hao3 hao3 dui4 ni3|I'll treat you well.
+谢谢你一直陪着我。|xie4 xie5 ni3 yi4 zhi2 pei2 zhe5 wo3|Thanks for always being with me.
+做我女朋友，好吗？|zuo4 wo3 nv3 peng2 you5 hao3 ma5|Will you be my girlfriend?
+亲爱的|qin1 ai4 de5|darling, dear
+宝贝|bao3 bei4|baby, darling
+我的小可爱|wo3 de5 xiao3 ke3 ai4|my little cutie
+早安，宝贝。|zao3 an1 bao3 bei4|Good morning, baby.
+晚安，做个好梦。|wan3 an1 zuo4 ge4 hao3 meng4|Good night, sweet dreams.
+你今天吃饭了吗？|ni3 jin1 tian1 chi1 fan4 le5 ma5|Have you eaten today?
+今天过得开心吗？|jin1 tian1 guo4 de5 kai1 xin1 ma5|Did you have a good day?
+别太累了。|bie2 tai4 lei4 le5|Don't get too tired.
+注意身体。|zhu4 yi4 shen1 ti3|Take care of your health.
+早点休息吧。|zao3 dian3 xiu1 xi5 ba5|Get some rest early.`]
+].map(([n,sub,s])=>({n,sub,w:s.trim().split('\n').map(l=>l.split('|'))}));
+const BI=new Set(D.flatMap(l=>l.w.map(c=>c[0])));
+['1','2','3','4','5','6','7'].forEach(n=>D.push({n:'HSK '+(n=='7'?'7-9':n),sub:'HSK 3.0 vocabulary, '+(n=='7'?'advanced, thousands of words':'level '+n),w:[],lv:n}));
+const g=(o,a,b)=>o?(o[a]!==undefined?o[a]:o[b]):undefined;
+function parse(arr){const out=[];arr.forEach(w=>{const h=g(w,'s','simplified'),f=(g(w,'f','forms')||[])[0];if(!h||!f||BI.has(h))return;const n=g(g(f,'i','transcriptions')||{},'n','numeric'),m=(g(f,'m','meanings')||[]).slice(0,3).join('; ');if(n&&m)out.push([h,n.toLowerCase().replace(/u:|ü/g,'v'),m])});return out}
+function loadLevel(i){const l=D[i];l.err=0;return fetch('https://cdn.jsdelivr.net/gh/drkameleon/complete-hsk-vocabulary@main/wordlists/exclusive/new/'+l.lv+'.min.json').then(r=>{if(!r.ok)throw 0;return r.json()}).then(a=>{l.w=parse(a);if(!l.w.length)throw 0}).catch(()=>{l.err=1}).then(()=>{if(!$('d').hidden)home()})}
+
+const $=id=>document.getElementById(id),now=()=>Date.now(),M={a:'āáǎàa',e:'ēéěèe',i:'īíǐìi',o:'ōóǒòo',u:'ūúǔùu',v:'ǖǘǚǜü'};
+let S={};try{S=JSON.parse(localStorage.getItem('zh-cards')||'{}')}catch(e){}
+let CS='Saved on this device',ref=null,tm;
+const lsave=()=>{try{localStorage.setItem('zh-cards',JSON.stringify(S))}catch(e){}};
+const save=()=>{lsave();sched()};
+function cs(m){CS=m;const e=$('cs');if(e)e.textContent=m}
+function sched(){if(ref){clearTimeout(tm);tm=setTimeout(push,1500)}}
+function push(){if(ref)ref.set({cards:S,voice2:P,t:now()}).then(()=>cs('Progress synced to your account')).catch(()=>cs('Saved on this device (sync failed)'))}
+async function cloud(){try{const[db,user]=await Promise.all([claude.use('db'),claude.use('user')]);if(!db||!user)return cs('Saved on this device (sync unavailable in this viewer)');const id=await user.id();if(!id)return cs('Saved on this device (sign in to sync)');ref=db.doc('data/users/'+id+'/progress');const sn=await ref.get();if(sn.exists){const r=sn.data()||{},c=r.cards||{};for(const k in c)if(!S[k]||(c[k].u||0)>(S[k].u||0))S[k]=c[k];if(r.voice2&&!P.v)Object.assign(P,r.voice2)}lsave();loadV();push();home()}catch(e){cs('Saved on this device (sync error: '+(e&&(e.code||e.message)||'unknown')+')')}}
+const syl=s=>{try{return syl0(s)}catch(e){return s}};
+const syl0=s=>{const t=+s.slice(-1)||5,b=s.replace(/\d$/,'');let k=b.search(/[ae]/);if(k<0)k=/ou/.test(b)?b.indexOf('o'):Math.max(...[...b].map((c,j)=>'aoeiuv'.includes(c)?j:-1));return`<span class="t${t}">${(b.slice(0,k)+M[b[k]][t-1]+b.slice(k+1)).replace(/v/g,'ü')}</span>`};
+const py=p=>p.split(' ').map(y=>/\d$/.test(y)?syl(y):y).join(' ').replace(/ ([，。？！、])/g,'$1');
+const W={};D.forEach(l=>l.w.forEach(([h,p])=>{if(p&&!/[，。？！]/.test(h))W[h]=p}));
+'的|de5,了|le5,吧|ba5,呢|ne5,个|ge4,和|he2,几|ji3,请问|qing3 wen4,小明|xiao3 ming2,北京|bei3 jing1,这里|zhe4 li3'.split(',').forEach(x=>{const[a,b]=x.split('|');W[a]=b});
+function auto(t){const a=[],s=[];let i=0;while(i<t.length){let n=Math.min(6,t.length-i);for(;n>0&&!W[t.substr(i,n)];n--);if(n){W[t.substr(i,n)].split(' ').forEach(y=>{a.push(y);s.push(n==1?t[i]:'')});i+=n}else{a.push(t[i++]);s.push('')}}
+return a.map((y,j)=>{const k=+(a[j+1]||'').slice(-1);return s[j]=='不'&&k==4?'bu2':s[j]=='一'&&k?(k==4?'yi2':'yi4'):y})}
+D.forEach(l=>l.w.forEach(c=>{if(!c[1])c[1]=auto(c[0]).join(' ')}));
+const E={};`你好|你好，我叫小明。|Hello, my name is Xiaoming.
+谢谢|谢谢你的茶。|Thank you for the tea.
+不客气|不客气，再见！|You're welcome, goodbye!
+再见|明天再见！|See you tomorrow!
+对不起|对不起，我不知道。|Sorry, I don't know.
+没关系|没关系，我们走吧。|It's okay, let's go.
+请|请坐。|Please sit down.
+是|我是学生。|I am a student.
+不|我不喝咖啡。|I don't drink coffee.
+我|我爱我的妈妈。|I love my mom.
+你|你在哪里？|Where are you?
+他|他是我的朋友。|He is my friend.
+她|她是老师。|She is a teacher.
+我们|我们是朋友。|We are friends.
+好|今天天气很好。|The weather is nice today.
+一|我有一个哥哥。|I have an older brother.
+三|我有三个朋友。|I have three friends.
+五|我五点起床。|I get up at five.
+早上好|早上好，老师！|Good morning, teacher!
+晚安|妈妈，晚安。|Good night, Mom.
+叫|我的狗叫小白。|My dog is called Xiaobai.
+名字|你的名字是什么？|What is your name?
+人|他是中国人。|He is Chinese.
+中国|我想去中国。|I want to go to China.
+吗|你是学生吗？|Are you a student?
+什么|你想吃什么？|What do you want to eat?
+谁|他是谁？|Who is he?
+哪里|你去哪里？|Where are you going?
+爱|爸爸爱妈妈。|Dad loves Mom.
+水|我要喝水。|I want to drink water.
+妈妈|我的妈妈很忙。|My mom is very busy.
+爸爸|爸爸在工作。|Dad is working.
+红|我喜欢红苹果。|I like red apples.
+黑|我的猫是黑的。|My cat is black.
+哥哥|我的哥哥是老师。|My older brother is a teacher.
+钱|我没有钱。|I have no money.
+书|这是我的书。|This is my book.
+孩子|孩子在睡觉。|The child is sleeping.
+对|对，我是学生。|Yes, I'm a student.
+好吃|面条很好吃。|The noodles are delicious.
+吃|我想吃米饭。|I want to eat rice.
+喝|你喝茶吗？|Do you drink tea?
+饭|我们去吃饭吧。|Let's go eat.
+茶|我喜欢喝茶。|I like drinking tea.
+咖啡|你喝咖啡吗？|Do you drink coffee?
+苹果|苹果很好吃。|The apple is tasty.
+面包|我早上吃面包。|I eat bread in the morning.
+想|我想学习中文。|I want to learn Chinese.
+要|我要一个苹果。|I want an apple.
+有|你有钱吗？|Do you have money?
+没有|我没有猫。|I don't have a cat.
+这|这是我的家。|This is my home.
+那|那是我的老师。|That is my teacher.
+大|这个苹果很大。|This apple is big.
+小|我的狗很小。|My dog is small.
+多|这里的人很多。|There are many people here.
+少|我的钱很少。|I have little money.
+今天|今天我很忙。|I'm busy today.
+明天|明天我们去学校。|Tomorrow we go to school.
+昨天|昨天我很累。|I was tired yesterday.
+现在|现在你在哪里？|Where are you now?
+家|我在家。|I'm at home.
+学校|我的学校很大。|My school is big.
+朋友|我的朋友是老师。|My friend is a teacher.
+老师|老师说中文。|The teacher speaks Chinese.
+学生|学生在学习。|The students are studying.
+学习|我在学习中文。|I'm studying Chinese.
+中文|你会说中文吗？|Can you speak Chinese?
+说|你说什么？|What did you say?
+看|我想看书。|I want to read.
+听|我喜欢听音乐。|I like listening to music.
+去|我们去学校吧。|Let's go to school.
+来|请来我家。|Please come to my home.
+在|妈妈在家。|Mom is at home.
+喜欢|我喜欢猫。|I like cats.
+很|我很高兴。|I'm very happy.
+太|这个太大了。|This is too big.
+狗|我的狗很大。|My dog is big.
+猫|猫在睡觉。|The cat is sleeping.
+米饭|我喜欢吃米饭。|I like eating rice.
+面条|我想吃面条。|I want to eat noodles.
+牛奶|孩子喝牛奶。|The child drinks milk.
+鱼|我不吃鱼。|I don't eat fish.
+蛋|我吃一个蛋。|I eat an egg.
+菜|这个菜很好吃。|This dish is delicious.
+水果|我喜欢吃水果。|I like eating fruit.
+饿|我很饿。|I'm hungry.
+渴|我很渴。|I'm thirsty.
+睡觉|我想睡觉。|I want to sleep.
+起床|我七点起床。|I get up at seven.
+走|我们走吧。|Let's go.
+跑|孩子在跑。|The child is running.
+坐|我坐在这里。|I sit here.
+给|我给你钱。|I give you money.
+做|妈妈在做饭。|Mom is making a meal.
+写|我在写中文。|I'm writing Chinese.
+读|我喜欢读书。|I like reading books.
+知道|你知道他是谁吗？|Do you know who he is?
+认识|我认识她。|I know her.
+会|我会说中文。|I can speak Chinese.
+能|你能来吗？|Can you come?
+可以|我可以坐这里吗？|Can I sit here?
+早|你今天很早。|You're early today.
+晚|我晚上不吃饭。|I don't eat in the evening.
+高兴|今天我很高兴。|I'm very happy today.
+累|我今天很累。|I'm tired today.
+忙|爸爸很忙。|Dad is busy.
+新|我有一个新手机。|I have a new phone.
+旧|我的电脑很旧。|My computer is old.
+快|火车很快。|The train is fast.
+慢|请慢一点。|Please go a bit slower.
+里|我在家里。|I'm at home.
+左边|银行在左边。|The bank is on the left.
+因为|因为我累，所以我睡觉。|Because I'm tired, I sleep.
+所以|我很忙，所以不能去。|I'm busy, so I can't go.
+但是|我想去，但是我没有钱。|I want to go, but I have no money.
+如果|如果明天下雨，我在家。|If it rains tomorrow, I'll stay home.
+或者|你喝茶或者咖啡？|Tea or coffee?
+已经|我已经吃饭了。|I've already eaten.
+还|我还想吃。|I still want to eat.
+也|我也喜欢猫。|I like cats too.
+都|我们都是学生。|We are all students.
+一起|我和朋友一起吃饭。|I eat with my friend.
+时间|我没有时间。|I don't have time.
+点|现在八点。|It's eight o'clock.
+天气|今天天气很冷。|The weather is cold today.
+下雨|明天会下雨。|It will rain tomorrow.
+热|今天很热。|It's hot today.
+冷|我很冷。|I'm cold.
+工作|爸爸在公司工作。|Dad works at the company.
+公司|我的公司很大。|My company is big.
+医院|医院在哪里？|Where is the hospital?
+银行|我去银行。|I'm going to the bank.
+机场|机场很远。|The airport is far.
+火车|我坐火车去北京。|I take the train to Beijing.
+出租车|我们坐出租车吧。|Let's take a taxi.
+旅游|我想去中国旅游。|I want to travel in China.
+手机|我的手机在哪里？|Where is my phone?
+电脑|我有一个新电脑。|I have a new computer.
+买|我想买一个手机。|I want to buy a phone.
+卖|这里卖水果。|They sell fruit here.
+贵|这个太贵了。|This is too expensive.
+便宜|这个很便宜。|This is cheap.
+漂亮|她很漂亮。|She is pretty.
+超市|我去超市买水果。|I go to the supermarket for fruit.
+饭馆|这个饭馆的菜很好吃。|The food at this restaurant is great.
+地铁|我坐地铁去学校。|I take the subway to school.
+飞机|我坐飞机去中国。|I fly to China.
+地图|我的手机有地图。|My phone has a map.
+附近|这里附近有银行吗？|Is there a bank near here?
+远|学校很远。|The school is far.
+近|医院很近。|The hospital is close.
+问|我想问老师。|I want to ask the teacher.
+回答|请回答。|Please answer.
+告诉|请告诉我。|Please tell me.
+帮助|谢谢你的帮助。|Thanks for your help.
+借|我想借你的书。|I'd like to borrow your book.
+打电话|我给妈妈打电话。|I call my mom.
+上网|我喜欢上网。|I like going online.
+音乐|这个音乐很好听。|This music sounds great.
+电影|我们去看电影吧。|Let's go see a movie.
+唱歌|他喜欢唱歌。|He likes singing.
+跳舞|她喜欢跳舞。|She likes dancing.
+运动|我喜欢运动。|I like exercise.
+足球|我爱足球。|I love soccer.
+游泳|我想去游泳。|I want to go swimming.
+生日|今天是我的生日。|Today is my birthday.
+礼物|这是给你的礼物。|This is a gift for you.
+春天|春天很漂亮。|Spring is beautiful.
+夏天|夏天很热。|Summer is hot.
+冬天|冬天很冷。|Winter is cold.
+雪|冬天有雪。|There is snow in winter.
+感冒|我感冒了。|I have a cold.
+药|我要吃药。|I need to take medicine.`.split('\n').forEach(l=>{const[a,b,c]=l.split('|');E[a]=[b,c]});
+let P={r:.85},V=[];try{Object.assign(P,JSON.parse(localStorage.getItem('zh-voice2')||'{}'))}catch(e){}
+const sv=()=>{try{localStorage.setItem('zh-voice2',JSON.stringify(P))}catch(e){}sched()};
+const sc=v=>(/natural|neural|online/i.test(v.name)?50:0)+(/premium|enhanced|siri/i.test(v.name)?40:0)+(/google|xiao|yun|ting|mei|lili|hui/i.test(v.name)?10:0)+(v.localService?0:5)+(/cn|hans/i.test(v.lang)?3:0);
+function loadV(){try{V=speechSynthesis.getVoices().filter(v=>/^(zh|cmn)/i.test(v.lang)&&!/hk|yue/i.test(v.lang)).sort((a,b)=>sc(b)-sc(a))}catch(e){}if($('vs'))voiceUI()}
+let TK=0,LAST='',BAD={};const cv=()=>V.find(v=>v.voiceURI==P.v)||V[0];
+const SRC={polly:['Amazon Polly (Zhiyu)',t=>'https://api.streamelements.com/kappa/v2/speech?voice=Zhiyu&text='+encodeURIComponent(t)],baidu:['Baidu Mandarin',t=>'https://fanyi.baidu.com/gettts?lan=zh&spd=4&source=web&text='+encodeURIComponent(t)],google:['Google Mandarin',t=>'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=zh-CN&q='+encodeURIComponent(t)]};
+const A=new Audio();let UN=0;
+function unlock(){if(UN)return;UN=1;try{A.src='data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';A.play().catch(()=>{});speechSynthesis.speak(new SpeechSynthesisUtterance(''))}catch(e){}}
+addEventListener('pointerdown',unlock,{once:true,capture:true});
+function info(){document.querySelectorAll('.vn').forEach(e=>e.textContent=LAST)}
+function dev(t){return new Promise(res=>{try{const v=cv(),u=new SpeechSynthesisUtterance(t);u.lang=v?v.lang:'zh-CN';if(v)u.voice=v;u.rate=P.r;u.onend=u.onerror=()=>res();speechSynthesis.speak(u);LAST='Device voice'+(v?': '+v.name:'');info()}catch(e){res()}})}
+function one(t,k){return new Promise(res=>{const o=(P.src=='device'?['device']:P.src&&P.src!='auto'?[P.src,'device']:['polly','baidu','google','device']).filter(x=>x=='device'||P.src==x||(BAD[x]|0)<2);let i=0;const nx=()=>{if(k!=TK)return res();const s=o[i++];if(!s)return res();if(s=='device')return dev(t).then(res);let d=0,tm;const f=()=>{if(!d){d=1;clearTimeout(tm);BAD[s]=(BAD[s]|0)+1;nx()}};tm=setTimeout(f,5000);A.onerror=f;A.onplaying=()=>{clearTimeout(tm);LAST=SRC[s][0];info()};A.onended=()=>{d=1;res()};A.src=SRC[s][1](t);A.defaultPlaybackRate=A.playbackRate=P.r;A.play().catch(f)};nx()})}
+async function say(...ts){const k=++TK;try{speechSynthesis.cancel();A.pause()}catch(e){}for(const t of ts.filter(Boolean)){if(k!=TK)return;await one(t,k);await new Promise(r=>setTimeout(r,250))}}
+function tst(k){return new Promise(res=>{let d=0;const f=r=>{if(!d){d=1;clearTimeout(t);A.pause();res(r)}};const t=setTimeout(()=>f('no response'),6000);A.onerror=()=>f('failed');A.onplaying=()=>{clearTimeout(t);setTimeout(()=>f('works'),1800)};A.src=SRC[k][1]('你好，很高兴认识你');A.play().catch(()=>f('failed'))})}
+async function testAll(){TK++;BAD={};const o=$('tr');let r='';try{speechSynthesis.cancel()}catch(e){}for(const k in SRC){o.textContent=r+'Testing '+SRC[k][0]+'… (listen)';r+=SRC[k][0]+': '+await tst(k)+'\n'}o.textContent=r+'Pick a source that works, or leave on Auto.'}
+function voiceUI(){const c=cv(),srcs=[['auto','Auto (best online voice)'],['polly','Amazon Polly (Zhiyu)'],['baidu','Baidu Mandarin'],['google','Google Mandarin'],['device','This device only']];$('vs').innerHTML=`<h3>Voice</h3><label class="mut">Voice source</label><select onchange="P.src=this.value;BAD={};sv();say('你好，我叫小明。')">${srcs.map(([v,n])=>`<option value="${v}"${(P.src||'auto')==v?' selected':''}>${n}</option>`).join('')}</select>`+(V.length?`<label class="mut">Device voice (used if online voices fail)</label><select onchange="P.v=this.value;sv();loadV()">${V.map(v=>`<option value="${v.voiceURI}"${v==c?' selected':''}>${v.name} · ${v.lang}</option>`).join('')}</select>`:'')+`<label class="mut">Speed <input type="range" min=".5" max="1.1" step=".05" value="${P.r}" oninput="P.r=+this.value;sv()"></label><button class="spk" onclick="say('你好！很高兴认识你。')">🔊 Test voice</button> <button class="spk" onclick="testAll()">Test each online voice</button><pre id="tr" class="mut" style="white-space:pre-wrap;font:inherit;margin:8px 0"></pre><p class="mut">Last played with: <span class="vn">${LAST||'nothing yet'}</span>. Online voices need an internet connection.</p>`}
+
+function home(){$('d').innerHTML=D.map((l,i)=>{const n=l.w.length,seen=l.w.filter(w=>S[w[0]]).length,due=l.w.filter(w=>S[w[0]]&&S[w[0]].d<=now()).length;
+return`<div class="deck"><div><b>${i<5?`Level ${i+1}: `:''}${l.n}</b><span>${l.sub}</span><small>${n?`${n} cards: ${n-seen} new, ${due} due, ${seen} started`:l.err?'Could not load. Check your connection, then tap Study to retry.':'Loading…'}</small><div class="bar"><i style="width:${seen/n*100}%"></i></div></div><button onclick="go(${i})">Study</button></div>`}).join('')+`<p id="cs" class="mut">${CS}</p>`}
+
+let Q=[],cur,shown;
+function go(i){if(!D[i].w.length){loadLevel(i).then(()=>D[i].w.length&&go(i));return}const w=D[i].w,t=now();Q=w.filter(x=>S[x[0]]&&S[x[0]].d<=t).concat(w.filter(x=>!S[x[0]]).slice(0,10));view('s');next()}
+function next(){cur=Q.shift();if(!cur){$('s').innerHTML=`<div class="card"><div class="hz">🎉</div><p>No more cards due in this deck.</p></div><button class="pri" onclick="view('d')">Back to decks</button>`;return}shown=0;draw()}
+function draw(){const[h,p,e]=cur,x=E[h];$('s').innerHTML=`<div class="top"><button class="ghost" onclick="view('d')">← Decks</button><span>${Q.length+1} left</span></div><div class="card"><div class="hz">${h}</div>${shown?`<div class="py">${py(p)}</div><div class="en">${e}</div>`:''}${shown&&x?`<div class="ex"><div class="exz">${x[0].replace(h,`<b class="hl">${h}</b>`)}</div><div class="exp">${py(auto(x[0]).join(' '))}</div><div class="en">${x[1]}</div><button class="spk" onclick="say('${x[0]}')">🔊 Sentence</button></div>`:''}<button class="spk" onclick="say('${h}')">🔊 Listen</button><small class="mut vn">${LAST}</small></div>${shown?`<div class="rt"><button onclick="rate(0)">Again</button><button onclick="rate(1)">Hard</button><button onclick="rate(2)">Good</button><button onclick="rate(3)">Easy</button></div>`:`<button class="pri" onclick="reveal()">Show answer</button>`}`}
+function reveal(){shown=1;draw();const x=E[cur[0]];say(cur[0],x&&x[0])}
+function rate(q){const s=S[cur[0]]||{i:0,e:2.5};
+if(q){s.i=s.i?Math.max(1,Math.round(s.i*[0,1.2,s.e,s.e*1.3][q])):[0,1,1,4][q];s.e=Math.max(1.3,s.e+[0,-.15,0,.15][q]);s.d=now()+s.i*864e5}
+else{s.i=0;s.e=Math.max(1.3,s.e-.2);s.d=now()+6e4;Q.push(cur)}
+s.u=now();S[cur[0]]=s;save();next()}
+
+function view(v){['d','s','t'].forEach(k=>$(k).hidden=k!=v);document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.v==v||(v=='s'&&b.dataset.v=='d')));if(v=='d')home();scrollTo(0,0)}
+document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>view(b.dataset.v));
+
+const TN=[['M4 6H36','1st tone','high and flat','妈','ma1','mother'],['M4 22L36 6','2nd tone','rising, like "huh?"','麻','ma2','hemp'],['M4 10L14 24L36 4','3rd tone','dips down, then up','马','ma3','horse'],['M4 5L36 25','4th tone','sharp fall, like a command','骂','ma4','scold'],['M14 20H26','Neutral','light and short','吗','ma5','question particle']];
+const PR=[['买','mai3','buy'],['卖','mai4','sell'],['十','shi2','ten'],['是','shi4','to be'],['问','wen4','ask'],['吻','wen3','kiss']];
+$('t').innerHTML=`<div id="vs"></div><h3>Tones</h3><p class="mut">Tap any row to hear it. The same syllable changes meaning with the tone. Pinyin colors match tones everywhere in the app.</p>`+
+TN.map(([d,n,x,h,p,e])=>`<div class="tone" onclick="say('${h}')"><svg class="t${p.slice(-1)}" viewBox="0 0 40 30"><path d="${d}"/></svg><div><b>${n}</b><small>${x}</small></div><div class="r">${h} ${py(p)}<small>${e}</small></div></div>`).join('')+
+`<h3>Tone pairs to practise</h3><div class="chips">`+PR.map(([h,p,e])=>`<div class="chip" onclick="say('${h}')">${h} ${py(p)}<small>${e}</small></div>`).join('')+
+`</div><h3>Good to know</h3><p class="mut">Two 3rd tones in a row: the first becomes 2nd, so 你好 is said "ní hǎo". Audio uses your device's Chinese voice; if it is silent, add a Chinese voice in your system speech settings.</p><h3>Backup</h3><p class="mut">Tap Show code and copy it to move your progress to another device. To restore, paste a code and tap Restore.</p><textarea id="bk" rows="3"></textarea><div class="rt" style="grid-template-columns:1fr 1fr"><button onclick="$('bk').value=btoa(unescape(encodeURIComponent(JSON.stringify(S))));$('bk').select()">Show code</button><button onclick="restore()">Restore</button></div>`;
+function restore(){try{const o=JSON.parse(decodeURIComponent(escape(atob($('bk').value.trim()))));for(const k in o)if(!S[k]||(o[k].u||0)>(S[k].u||0))S[k]=o[k];save();view('d');cs('Progress restored')}catch(e){$('bk').value='That code is not valid.'}}
+try{speechSynthesis.onvoiceschanged=loadV}catch(e){}
+loadV();view('d');D.forEach((l,i)=>l.lv&&loadLevel(i));
+</script></body></html>
